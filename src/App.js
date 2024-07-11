@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route,Outlet  } from 'react-router-dom';
+import Header from './component/Header';
+import ManuBar from './component/ManuBar';
+import Sidebar from './component/Sidebar';
+import Home from './pages/Home';
+import Fence from './pages/Fence';
+import Help from './pages/Help';
+import Live from './pages/Live'
+import UpLadingSystem from './pages/UpLadingSystem';
 import './App.css';
+import FileConversion from './pages/FileConversion';
 
-function App() {
+
+const MainLayout = ({ children }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <ManuBar />
+      {children}
     </div>
   );
-}
+};
+
+const App = () => {
+  return (
+    <Router>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/fence" element={<Fence />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/live" element={<Live />} />
+          <Route path="/FileConversion" element={<FileConversion />} />
+          <Route path="/uploading-setup" element={<UpLadingSystemWithSidebar />}>
+          </Route>
+        </Routes>
+      </MainLayout>
+    </Router>
+  );
+};
+
+const UpLadingSystemWithSidebar = () => {
+  return (
+    <div style={{ display: 'flex' }}>
+      <Sidebar />
+      {/* <Outlet /> */}
+      <div style={{marginLeft:"250px", backgroundColor:"black", width:"90%",height:"100vh" }}>
+      <UpLadingSystem />
+      </div>
+    </div>
+  );
+};
 
 export default App;
+
+// 

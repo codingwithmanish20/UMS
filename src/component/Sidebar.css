@@ -1,0 +1,30 @@
+.drawer-paper {
+    position: absolute !important;;
+    top: 7rem !important;;
+    left: 0px !important;;
+    width: 250px;
+    background-color: #7D7D7D !important;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  .sidebar-list {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .accordion-summary {
+    display: flex;
+    align-items: center;
+  }
+  
+  .accordion-details {
+    flex-direction: column;
+  }
+  
+  .detect-button {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+  
+ 
