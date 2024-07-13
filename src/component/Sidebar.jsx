@@ -81,7 +81,7 @@ const Sidebar = () => {
                             <ListItemIcon>
                                 <SettingsIcon />
                             </ListItemIcon>
-                            <ListItemText primary="Advance Options" />
+                            <ListItemText primary="Upload Options" />
                         </AccordionSummary>
                         <AccordionDetails>
                             <ListItem button>
@@ -99,6 +99,23 @@ const Sidebar = () => {
                             <ListItem button>
                                 <ListItemText primary="Set ID" />
                             </ListItem>
+                        </AccordionDetails>
+                    </Accordion>
+
+                    <Accordion style={{  marginBottom: "20px" }}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon style={{ fontSize: '1.2rem' }} />} // Adjust icon size
+                            sx={{ padding: '0 3px', }} // Adjust padding if necessary
+                        >
+                            <ListItemIcon>
+                                <SettingsIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Advance Options" />
+                        </AccordionSummary>
+                        <AccordionDetails>
+                        <ListItem button>
+                        <ListItemText primary="Clear Logs" />
+                        </ListItem>
                         </AccordionDetails>
                     </Accordion>
                     <Accordion>
@@ -130,6 +147,7 @@ const Sidebar = () => {
 
                     
                 </List>
+                
                 <ListItem  style={{marginTop:"11rem"}}>
                         <IconButton>
                             <Refresh />
